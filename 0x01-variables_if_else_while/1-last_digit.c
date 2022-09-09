@@ -2,9 +2,9 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - print if the number is postive, zero, or negative
+ * main - print the last digit of the number stored in the variable n
  * Description: using the main function
- * this program prints "Programming is positive, zero, or negative
+ * this program prints "Last digit is greater than 5, is zero, or is less than 6 and not 0"
  * Return: 0
  */
 int main(void)
