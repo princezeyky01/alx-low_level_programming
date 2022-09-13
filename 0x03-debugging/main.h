@@ -1,3 +1,10 @@
+/**
+ * File:main.h
+ *
+ * Author: Prince (Arinze) Udeh
+ *
+ * Desc:header file containing functions declaration
+ */
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdio.h>
