@@ -1,6 +1,6 @@
 /**
  *File:main.h
- *Author:rince Udeh
+ *Author: Prince Udeh
  *Desc:header file containing functions declaration
  */
 void print_alphabet(void);
