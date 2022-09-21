@@ -16,7 +16,7 @@ void print_number(int n)
 		n *= -1;
 	}
 	for (i = 0; n / divisor > 9; i++, divisor *= 10)
-		;
+
 	for (; divisor >= 1; n %= divisor, divisor /= 10)
 	{
 		resp = n / divisor;
