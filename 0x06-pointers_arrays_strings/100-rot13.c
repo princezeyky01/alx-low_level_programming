@@ -1,43 +1,32 @@
 #include "main.h"
 
 /**
-* rot13 -  encodes a string using rot13
-* @str:the string targeted
-*Return: returns the encoded string
+* rot13 - encode string using rot13
+* @s: string to encode
+* Return: encoded string
 */
 
-char *rot13(char *str)
+char *rot13(char *s)
 {
-	int index1, index2;
-	char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
-		'G', 'H', 'I', 'J', 'K', 'L',
-		'M', 'N', 'O', 'P', 'Q', 'R',
-		'S', 'T', 'U', 'V', 'W', 'X',
-		'Y', 'Z', 'a', 'b', 'c', 'd',
-		'e', 'f', 'g', 'h', 'i', 'j',
-		'k', 'l', 'm', 'n', 'o', 'p',
-		'q', 'r', 's', 't', 'u', 'v',
-		'w', 'x', 'y', 'z'};
-	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R', 'S',
-		'T', 'U', 'V', 'W', 'X', 'Y',
-		'Z', 'A', 'B', 'C', 'D', 'E',
-		'F', 'G', 'H', 'I', 'J', 'K',
-		'L', 'M', 'n', 'o', 'p', 'q',
-		'r', 's', 't', 'u', 'v', 'w',
-		'x', 'y', 'z', 'a', 'b', 'c',
-		'd', 'e', 'f', 'g', 'h', 'i',
-		'j', 'k', 'l', 'm'};
+	int a[53] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+							'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+					     		     'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+							     		     'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+									     		     'W', 'X', 'Y', 'Z'};
+			int b[53] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+						     'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+						     		     'l', 'm', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
+								     		     'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+										     		     'J', 'K', 'L', 'M'};
+				int i, j;
 
-	while (str[++index1])
-	{
-		for (index2 = 0; str[index2] != '\0'; index2++)
-		{
-			if (str[index1] == alphabet[index2])
-			{
-				str[index1] = rot13key[index2]
-					break;
-			}
-		}
-	}
-	return (str);
+					for (j = 0; s[j] != '\0'; j++) /*loop through string*/
+					{
+						i = 0;
+						while (a[i] != '\0' && s[j] != a[i]) /*loop through rot13 arr*/
+							i++;
+						if (s[j] == a[i]) /*if alpha matches, set to index in b arr*/
+							s[j] = b[i];
+					}
+					return (s);
 }
