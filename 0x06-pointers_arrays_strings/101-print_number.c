@@ -7,19 +7,26 @@
 
 void print_number(int n)
 {
-	int divisor = 1, i, resp;
+	unsigned int m, d, count;
 
 	if (n < 0)
 	{
-		_putchar('-');
-		n *= -1;
+		_putchar(45);
+		m = n * -1;
 	}
-
-	for (i = 0; n / divisor > 9; i++, divisor *= 10)
-		;
-	for (; divisor >= 1; n %= divisor, divisor /= 10)
+	else
 	{
-		resp = n / divisor;
-		_putchar('0' + resp);
+		m = n;
+	}
+	d = m;
+	count = 1;
+	while (d > 9)
+	{
+		d /= 10;
+		count *= 10;
+	}
+	for (; count >= 1; count /= 10)
+	{
+		_putchar(((m / count) % 10) + 48);
 	}
 }
