@@ -1,4 +1,4 @@
-i#include "main.h"
+#include "main.h"
 
 /**
 *strtow - splits a stirng into words
